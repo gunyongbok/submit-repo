@@ -1,17 +1,23 @@
-var a = 1;
-const b = 2;
-let c;
+class Employee {
+  constructor(
+    private _name : String,
+    private _age : Number,
+    private _job : String,
+  )
 
-try {
-  console.log(b);
-  console.log(c);
-} catch {}
+  get empName() {
+    return this._name;
+  }
 
-function foo(arg) {
-  if (arg === 3) return;
+  set empName(val : string) {
+    this._name = val;
+  }
 
-  console.log(arg);
-  foo(arg + 1);
+  printEMp = (): void => {
+    console.log(_name, _age, _job);
+  };
 }
 
-foo(1);
+let employee1 = new Employee("kim", 20, "개발자");
+employee1._name = "lee";
+employee1.printEMp();
